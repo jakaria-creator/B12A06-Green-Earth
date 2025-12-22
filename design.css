@@ -1,0 +1,470 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Menubar container */
+.menubar {
+  width: 100%;
+  background-color: #15803d; /* Green Earth theme */
+  padding: 10px 40px;
+}
+
+/* Navbar layout */
+.menubar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.menubar .logo a {
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Menu links */
+.menubar .menu-links {
+  display: flex;
+  gap: 25px;
+}
+
+.menubar .menu-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.menubar .menu-links a:hover {
+  color: #facc15; /* Yellow highlight on hover */
+}
+
+/* Plant a Tree button */
+.menubar .btn-plantATree button {
+  background-color: #facc15; /* Bright yellow */
+  color: #15803d;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menubar .btn-plantATree button:hover {
+  background-color: #FFBF00;
+  color: #15803d;
+  transform: scale(1.05);
+}
+
+
+
+/* Hero Grid Layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+  background-color: #f0fdf4;
+  padding: 80px 40px;
+}
+
+/* Leaf Images */
+.hero-leaf img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Center Content */
+.hero-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  color: #374151;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Button Styling */
+.btn-hero {
+  background-color: #facc15;
+  color: #15803d;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #FFBF00;
+  color: #15803d;
+  transform: scale(1.05);
+}
+
+
+
+
+/* Layout */
+.tree-shop {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 40px;
+  padding: 40px 60px;
+  background-color: #f0fdf4;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar h3 {
+  margin-bottom: 20px;
+  color: #15803d;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background-color: #d1fae5;
+  font-weight: bold;
+}
+
+/* Tree List */
+.tree-list h2 {
+  margin-bottom: 30px;
+  color: #15803d;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Tree Card */
+.tree-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tree-card h4 {
+  margin-bottom: 10px;
+  color: #15803d;
+}
+
+.tree-card .tag {
+  display: inline-block;
+  background-color: #d1fae5;
+  color: #065f46;
+  font-size: 0.9em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.tree-card p {
+  font-size: 0.95em;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.price-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  color: #15803d;
+}
+
+.tree-card button {
+  background-color: #facc15;
+  color: #15803d;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tree-card button:hover {
+  background-color: #FFBF00;
+  color: #15803d;
+  transform: scale(1.05);
+}
+
+/* Cart Summary */
+.cart-summary h3 {
+  margin-bottom: 20px;
+  color: #15803d;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.cart-summary ul li {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+  color: #374151;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #15803d;
+}
+
+
+
+
+/* Section container */
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0fdf4;;
+}
+
+.campaign {
+    padding: 0px 150px;
+}
+
+/* Header styling */
+.about-campaign-header {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.about-campaign-header h2 {
+  font-size: 2.8em;
+  color: #15803d;
+}
+
+/* Campaign layout */
+.about-campaign {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+
+/* Left image block */
+.campaign-image {
+  background-color: #f0fdf4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.campaign-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Right text block */
+.campaign-text {
+  background-color: #f0fdf4; /* soft green background */
+  color: #1f2937; /* dark gray text */
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.campaign-text h2 {
+  font-size: 2.5em;
+  color: #facc15; /* yellow heading */
+  margin-bottom: 20px;
+}
+
+.campaign-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.campaign-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.campaign-text ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+
+
+/* Impact Section */
+.impact-section {
+  background-color: #d1fae5; /* light green background */
+  padding: 80px 40px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.impact-section h2 {
+  font-size: 2.8em;
+  color: #15803d;
+  margin-bottom: 60px;
+}
+
+/* Grid layout */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Individual box */
+.impact-box {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.impact-box h3 {
+  font-size: 2.5em;
+  color: #15803d;
+  margin-bottom: 10px;
+}
+
+.impact-box p {
+  font-size: 1.1em;
+  color: #374151;
+}
+
+
+
+
+/* Donation Section */
+.donation-section {
+  background-color: #15803d; /* main green background */
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.donation-section h2 {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+/* Card container */
+.donation-card {
+  background-color: #ffffff;
+  max-width: 600px; /* wider card */
+  margin: 0 auto 40px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Form Styling */
+/* Card container */
+.donation-card {
+  background-color: #1a9245; /* green card background */
+  max-width: auto;
+  margin: 0 auto 40px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Form inside the card */
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input fields */
+.donation-form input,
+.donation-form select {
+  padding: 14px 18px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff; /* white inputs */
+  color: #1f2937;
+}
+
+/* Dropdown appearance */
+.donation-form select {
+  appearance: none;
+}
+
+
+/* Button */
+.donation-form button {
+  background-color: #facc15; /* yellow button */
+  color: #15803d;
+  border: none;
+  padding: 16px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.donation-form button:hover {
+  background-color: #FFBF00;
+  transform: scale(1.05);
+}
+
+/* Footer */
+.donation-footer {
+  background-color: #065f46; /* deeper green */
+  color: #ffffff;
+  padding: 20px;
+  font-size: 0.9em;
+  text-align: center;
+}

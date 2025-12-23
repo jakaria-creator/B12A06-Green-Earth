@@ -104,7 +104,13 @@ const addToCart = (name, price) => {
   renderCart();
 };
 
-// Render cart as a styled card
+// Remove item from cart
+const removeFromCart = (name) => {
+  cart = cart.filter(item => item.name !== name);
+  renderCart();
+};
+
+// Render cart as a styled card with remove buttons
 const renderCart = () => {
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
@@ -117,14 +123,20 @@ const renderCart = () => {
 
     const li = document.createElement("li");
     li.innerHTML = `
-      <span class="item-name">${name}</span>
-      <span class="item-meta">৳${price} × ${quantity}</span>
+      <div class="cart-item">
+        <div class="cart-left">
+          <span class="item-name">${name}</span>
+          <span class="item-meta">৳${price} × ${quantity}</span>
+        </div>
+        <button class="remove-btn" onclick="removeFromCart('${name}')">❌</button>
+      </div>
     `;
     cartItems.appendChild(li);
   });
 
   cartTotal.textContent = `Total: ৳${total}`;
 };
+
 
 /* -------------------
    Modal Functionality
@@ -173,7 +185,6 @@ window.addEventListener("keydown", (e) => {
     closeModal();
   }
 });
-
 
 /* -------------------
    Initialize

@@ -289,6 +289,45 @@ body {
   padding-top: 12px;
 }
 
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.cart-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #065f46;
+}
+
+.item-meta {
+  font-size: 0.95em;
+  color: #374151;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.2s ease;
+}
+
+.remove-btn:hover {
+  transform: scale(1.2);
+}
+
+
 
 
 /* modal styling */

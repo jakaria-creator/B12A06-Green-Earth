@@ -1,9 +1,21 @@
 // Global cart array
 let cart = [];
 
+/* -------------------
+   Spinner Functions
+------------------- */
+const showSpinner = () => {
+  document.getElementById("spinner").classList.remove("hidden");
+};
+
+const hideSpinner = () => {
+  document.getElementById("spinner").classList.add("hidden");
+};
+
 // Load categories dynamically
 const loadCategories = async () => {
   try {
+    showSpinner();
     const res = await fetch("https://openapi.programming-hero.com/api/categories");
     const { categories } = await res.json();
 
@@ -33,6 +45,8 @@ const loadCategories = async () => {
     });
   } catch (error) {
     console.error("Error loading categories:", error);
+  } finally {
+    hideSpinner();
   }
 };
 
@@ -45,22 +59,28 @@ const setActiveCategory = (selectedLi) => {
 // Load all plants
 const loadAllPlants = async () => {
   try {
+    showSpinner();
     const res = await fetch("https://openapi.programming-hero.com/api/plants");
     const { plants } = await res.json();
     renderPlants(plants);
   } catch (error) {
     console.error("Error loading all plants:", error);
+  } finally {
+    hideSpinner();
   }
 };
 
 // Load plants by category (Fruit Tree = 1, Flowering Tree = 2, etc.)
 const loadPlantsByCategory = async (id) => {
   try {
+    showSpinner();
     const res = await fetch(`https://openapi.programming-hero.com/api/category/${id}`);
     const { plants } = await res.json();
     renderPlants(plants);
   } catch (error) {
     console.error(`Error loading category ${id} plants:`, error);
+  } finally {
+    hideSpinner();
   }
 };
 

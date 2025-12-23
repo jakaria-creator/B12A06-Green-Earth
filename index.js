@@ -79,7 +79,7 @@ const renderPlants = (plants) => {
       <p>${description}</p>
       <span class="tag">${category}</span>
       <div class="price-cart">
-        <span class="price">$${price}</span>
+        <span class="price">৳${price}</span>
         <button onclick="addToCart('${name}', ${price})">Add to Cart</button>
       </div>
     `;
@@ -88,13 +88,18 @@ const renderPlants = (plants) => {
   });
 };
 
-// Add to cart
+// Add to cart with quantity support
 const addToCart = (name, price) => {
-  cart.push({ name, price });
+  const existingItem = cart.find(item => item.name === name);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
   renderCart();
 };
 
-// Render cart
+// Render cart as a styled card
 const renderCart = () => {
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
@@ -102,15 +107,20 @@ const renderCart = () => {
   cartItems.innerHTML = "";
   let total = 0;
 
-  cart.forEach(({ name, price }) => {
-    total += price;
+  cart.forEach(({ name, price, quantity }) => {
+    total += price * quantity;
+
     const li = document.createElement("li");
-    li.textContent = `${name} $${price} × 1`;
+    li.innerHTML = `
+      <span class="item-name">${name}</span>
+      <span class="item-meta">৳${price} × ${quantity}</span>
+    `;
     cartItems.appendChild(li);
   });
 
-  cartTotal.textContent = `Total: $${total}`;
+  cartTotal.textContent = `Total: ৳${total}`;
 };
+
 
 // Initialize everything once
 document.addEventListener("DOMContentLoaded", () => {

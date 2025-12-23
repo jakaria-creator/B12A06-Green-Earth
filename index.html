@@ -48,49 +48,34 @@
 
 
 <section class="tree-shop">
+  <!-- Sidebar -->
   <aside class="sidebar">
-    <h3>Categories</h3>
-    <ul>
-      <li class="active">All Trees</li>
-      <li>Fruit Trees</li>
-      <li>Flowering Trees</li>
-      <li>Shade Trees</li>
-      <li>Medicinal Trees</li>
-      <li>Timber Trees</li>
-      <li>Evergreen Trees</li>
-      <li>Ornamental Plants</li>
-      <li>Bamboo</li>
-      <li>Climbers</li>
-      <li>Aquatic Plants</li>
-    </ul>
-  </aside>
+  <h3>Categories</h3>
+  <ul id="category-list">
+    <!-- Categories will be injected here -->
+  </ul>
+</aside>
 
+
+  <!-- Tree Grid -->
   <main class="tree-list">
-    <h2>Choose Your Trees</h2>
-    <div class="tree-grid">
-      <!-- Tree Card -->
-      <div class="tree-card">
-        <h4>Mango Tree</h4>
-        <span class="tag">Fruit Tree</span>
-        <p>A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green foliage provides shade and beauty.</p>
-        <div class="price-cart">
-          <span class="price">฿500</span>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-      <!-- Repeat .tree-card for other trees -->
-    </div>
-  </main>
+  <h2>Choose Your Trees</h2>
+  <div id="tree-grid" class="tree-grid">
+    <!-- Tree cards will be injected here -->
+  </div>
+</main>
 
+
+  <!-- Cart Summary -->
   <aside class="cart-summary">
     <h3>Your Cart</h3>
-    <ul>
-      <li>Mango Tree ฿500 × 1</li>
-      <li>Guava Tree ฿500 × 1</li>
+    <ul id="cart-items">
+      <!-- Cart items will be injected here -->
     </ul>
-    <div class="total">Total: ฿1000</div>
+    <div class="total" id="cart-total">Total: $0</div>
   </aside>
 </section>
+
 
 
 
@@ -167,6 +152,8 @@
     © 2025 Green Earth. All Rights Reserved.
   </footer>
 
+
+<script src="index.js"></script>
 
 
 </body>

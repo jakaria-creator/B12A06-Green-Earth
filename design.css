@@ -129,6 +129,7 @@ body {
 
 
 /* Layout */
+/* Layout */
 .tree-shop {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -150,11 +151,13 @@ body {
 }
 
 .sidebar ul li {
-  padding: 10px;
+  padding: 10px 16px;
   margin-bottom: 8px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   transition: background 0.3s ease;
+  font-weight: 500;
+  color: #065f46;
 }
 
 .sidebar ul li:hover,
@@ -167,6 +170,7 @@ body {
 .tree-list h2 {
   margin-bottom: 30px;
   color: #15803d;
+  font-size: 2em;
 }
 
 .tree-grid {
@@ -178,14 +182,18 @@ body {
 /* Tree Card */
 .tree-card {
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .tree-card h4 {
   margin-bottom: 10px;
   color: #15803d;
+  font-size: 1.3em;
 }
 
 .tree-card .tag {
@@ -213,11 +221,12 @@ body {
 .price {
   font-weight: bold;
   color: #15803d;
+  font-size: 1.1em;
 }
 
 .tree-card button {
-  background-color: #facc15;
-  color: #15803d;
+  background-color: #22c55e;
+  color: #ffffff;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -226,8 +235,7 @@ body {
 }
 
 .tree-card button:hover {
-  background-color: #FFBF00;
-  color: #15803d;
+  background-color: #15803d;
   transform: scale(1.05);
 }
 
@@ -254,6 +262,7 @@ body {
   font-size: 1.1em;
   color: #15803d;
 }
+
 
 
 
@@ -468,3 +477,5 @@ section {
   font-size: 0.9em;
   text-align: center;
 }
+
+

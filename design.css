@@ -689,3 +689,162 @@ section {
   text-align: center;
 }
 
+
+
+
+/* -------------------
+   Mobile Responsiveness (≤768px)
+------------------- */
+@media (max-width: 768px) {
+  /* Menubar */
+  .menubar {
+    padding: 10px 20px;
+  }
+  .menubar nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .menubar .menu-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
+  .menubar .menu-links a {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+  .menubar .btn-plantATree {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .menubar .btn-plantATree button {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  /* Hero Section */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+  .hero-leaf {
+    display: none; /* hide side leaves on mobile */
+  }
+  .hero-content h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  .hero-content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  .btn-hero {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 8px;
+  }
+
+  /* Tree Shop */
+  .tree-shop {
+    grid-template-columns: 1fr; /* stack sidebar, grid, cart */
+    gap: 20px;
+    padding: 20px;
+  }
+  .tree-shop-header {
+    font-size: 2em;
+  }
+  .tree-card img {
+    height: 160px;
+  }
+  .tree-card h4 {
+    font-size: 1.1em;
+  }
+  .tree-card p {
+    font-size: 0.9em;
+  }
+
+  /* Cart */
+  .cart-card {
+    padding: 15px;
+  }
+  .cart-card h3 {
+    font-size: 1.1rem;
+  }
+  .total {
+    font-size: 1rem;
+  }
+
+  /* Campaign Section */
+  .campaign {
+    padding: 20px;
+  }
+  .about-campaign {
+    grid-template-columns: 1fr; /* stack image and text */
+  }
+  .campaign-text {
+    padding: 20px;
+  }
+  .campaign-text h2 {
+    font-size: 1.8em;
+  }
+  .campaign-text p {
+    font-size: 1em;
+  }
+
+  /* Impact Section */
+  .impact-section {
+    padding: 40px 20px;
+  }
+  .impact-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .impact-grid {
+    grid-template-columns: 1fr; /* stack boxes */
+    gap: 20px;
+  }
+  .impact-box h3 {
+    font-size: 2em;
+  }
+
+  /* Donation Section */
+  .donation-section h2 {
+    font-size: 2em;
+  }
+  .donation-card {
+    padding: 20px;
+  }
+  .donation-form input,
+  .donation-form select,
+  .donation-form button {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  /* Footer */
+  .donation-footer {
+    font-size: 0.8em;
+    padding: 15px;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+  .modal-content img {
+    height: auto;
+    max-height: 200px;
+  }
+}
+
+
+
+

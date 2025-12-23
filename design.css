@@ -128,7 +128,21 @@ body {
 
 
 
-/* Layout */
+/* tree shop header */
+
+.tree-shop-header-container {
+  text-align: center;
+  background-color: #f0fdf4;
+  padding: 20px 0;
+}
+
+.tree-shop-header {
+  font-size: 3em;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 20px;
+}
+
 /* Layout */
 .tree-shop {
   display: grid;
@@ -220,6 +234,19 @@ body {
   color: #374151;
   margin-bottom: 20px;
 }
+
+.tree-card .tree-name {
+  color: #15803d;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.tree-card .tree-name:hover {
+  color: #22c55e;        /* lighter green on hover */
+  transform: scale(1.05); /* subtle zoom effect */
+  text-decoration: underline; /* optional underline */
+}
+
 
 .price-cart {
   display: flex;
@@ -661,5 +688,4 @@ section {
   font-size: 0.9em;
   text-align: center;
 }
-
 

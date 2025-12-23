@@ -64,7 +64,7 @@ const loadPlantsByCategory = async (id) => {
   }
 };
 
-// Render plant cards
+// Render plant cards with modal trigger
 const renderPlants = (plants) => {
   const grid = document.getElementById("tree-grid");
   grid.innerHTML = "";
@@ -75,7 +75,7 @@ const renderPlants = (plants) => {
 
     card.innerHTML = `
       <img src="${image}" alt="${name}" style="width:100%; border-radius:8px; margin-bottom:15px;">
-      <h4>${name}</h4>
+      <h4 class="tree-name" style="cursor:pointer; color:#15803d;">${name}</h4>
       <p>${description}</p>
       <span class="tag">${category}</span>
       <div class="price-cart">
@@ -83,6 +83,11 @@ const renderPlants = (plants) => {
         <button onclick="addToCart('${name}', ${price})">Add to Cart</button>
       </div>
     `;
+
+    // Add click event to tree name to open modal
+    card.querySelector(".tree-name").addEventListener("click", () => {
+      openModal({ id, image, name, description, category, price });
+    });
 
     grid.appendChild(card);
   });
@@ -121,8 +126,58 @@ const renderCart = () => {
   cartTotal.textContent = `Total: ৳${total}`;
 };
 
+/* -------------------
+   Modal Functionality
+------------------- */
 
-// Initialize everything once
+// Open modal with tree details
+const openModal = ({ id, image, name, description, category, price }) => {
+  document.getElementById("modal-image").src = image;
+  document.getElementById("modal-name").textContent = name;
+  document.getElementById("modal-description").textContent = description;
+  document.getElementById("modal-category").textContent = category;
+  document.getElementById("modal-price").textContent = `৳${price}`;
+
+  const modal = document.getElementById("tree-modal");
+  modal.classList.remove("hidden");
+  modal.classList.add("show"); // trigger transition
+
+  // Add to cart from modal
+  const addBtn = document.getElementById("modal-add");
+  addBtn.onclick = () => {
+    addToCart(name, price);
+    closeModal();
+  };
+};
+
+// Close modal
+const closeModal = () => {
+  const modal = document.getElementById("tree-modal");
+  modal.classList.remove("show");
+  setTimeout(() => modal.classList.add("hidden"), 300); // wait for fade-out
+};
+
+document.getElementById("modal-close").addEventListener("click", closeModal);
+
+// Close modal on outside click
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("tree-modal");
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// Close modal on ESC key
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+
+
+/* -------------------
+   Initialize
+------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   loadCategories();
   loadAllPlants(); // default view shows all trees

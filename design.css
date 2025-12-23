@@ -190,6 +190,15 @@ body {
   justify-content: space-between;
 }
 
+.tree-card img {
+  width: 100%;          /* full card width */
+  height: 200px;        /* fixed height for consistency */
+  object-fit: cover;    /* crop/scale image nicely */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+
 .tree-card h4 {
   margin-bottom: 10px;
   color: #15803d;

@@ -84,7 +84,7 @@ const loadPlantsByCategory = async (id) => {
   }
 };
 
-// Render plant cards with modal trigger
+// Render plant cards with truncated description + modal trigger
 const renderPlants = (plants) => {
   const grid = document.getElementById("tree-grid");
   grid.innerHTML = "";
@@ -93,10 +93,15 @@ const renderPlants = (plants) => {
     const card = document.createElement("div");
     card.classList.add("tree-card");
 
+    // Truncate description to keep cards minimal
+    const shortDescription = description.length > 80 
+      ? description.substring(0, 80) + "..." 
+      : description;
+
     card.innerHTML = `
       <img src="${image}" alt="${name}" style="width:100%; border-radius:8px; margin-bottom:15px;">
       <h4 class="tree-name" style="cursor:pointer; color:#15803d;">${name}</h4>
-      <p>${description}</p>
+      <p>${shortDescription}</p>
       <span class="tag">${category}</span>
       <div class="price-cart">
         <span class="price">৳${price}</span>
@@ -104,7 +109,7 @@ const renderPlants = (plants) => {
       </div>
     `;
 
-    // Add click event to tree name to open modal
+    // Add click event to tree name to open modal with full details
     card.querySelector(".tree-name").addEventListener("click", () => {
       openModal({ id, image, name, description, category, price });
     });
@@ -162,7 +167,7 @@ const renderCart = () => {
    Modal Functionality
 ------------------- */
 
-// Open modal with tree details
+// Open modal with tree details (full description)
 const openModal = ({ id, image, name, description, category, price }) => {
   document.getElementById("modal-image").src = image;
   document.getElementById("modal-name").textContent = name;
